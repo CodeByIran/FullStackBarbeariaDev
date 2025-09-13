@@ -130,4 +130,3 @@ export default function Home() {
     </main>
   );
 }
-// barbearia/src/app/page.tsx

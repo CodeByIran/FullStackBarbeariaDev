@@ -1,4 +1,3 @@
-// components/Categories.tsx
 import { ReactNode } from "react";
 
 interface CategoryProps {
