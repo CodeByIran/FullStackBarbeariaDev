@@ -102,6 +102,10 @@
 //   );
 // }
 import { Header } from "../components/Header";
+import { SearchBar } from "@/components/SearchBar";
+import { Categories } from "@/components/Categories";
+import { Banner } from "@/components/Banner";
+
 
 export default function Home() {
   return (
@@ -115,6 +119,14 @@ export default function Home() {
         </h1>
         <p className="text-sm text-gray-300">Sexta, 2 de fevereiro</p>
       </section>
+       <SearchBar />
+
+          <Categories />
+
+          <Banner />
+
+
+
     </main>
   );
 }
