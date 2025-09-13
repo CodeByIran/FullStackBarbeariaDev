@@ -8,8 +8,13 @@ export function Header() {
       {/* Logo */}
       <div className="flex items-center">
         {/* Placeholder do logo.svg (substituir depois pelo arquivo real) */}
-        <Image src="/logo.svg" alt="Logo" width={100} height={32} />
-
+        <Image
+          src="/imagens/logo.svg"
+          alt="Logo"
+          width={100}
+          height={32}
+          priority
+        />
       </div>
 
       {/* Botão do menu */}
