@@ -101,32 +101,132 @@
 //     </div>
 //   );
 // }
+// import { Header } from "../components/Header";
+// import { SearchBar } from "@/components/SearchBar";
+// import { Categories } from "@/components/Categories";
+// import { Banner } from "@/components/Banner";
+
+
+// export default function Home() {
+//   return (
+//     <main className="min-h-screen bg-[#141518] text-white">
+//       <Header />
+
+//       {/* Conteúdo que virá em seguida */}
+//       <section className="px-5 mt-6">
+//         <h1 className="text-[20px] font-normal">
+//           Olá, <span className="font-bold">Miguel!</span>
+//         </h1>
+//         <p className="text-sm text-gray-300">Sexta, 2 de fevereiro</p>
+//       </section>
+//        <SearchBar />
+
+//           <Categories />
+
+//           <Banner />
+
+
+
+//     </main>
+//   );
+// }
+
+// ---------------------------------------------------------------
+
+
 import { Header } from "../components/Header";
 import { SearchBar } from "@/components/SearchBar";
 import { Categories } from "@/components/Categories";
 import { Banner } from "@/components/Banner";
-
+import { BookingItem } from "@/components/BookingItem";
 
 export default function Home() {
   return (
-    <main className="min-h-screen bg-[#141518] text-white">
+    <main className="flex flex-col min-h-screen bg-[#141518] text-white px-5 py-6">
       <Header />
 
-      {/* Conteúdo que virá em seguida */}
-      <section className="px-5 mt-6">
+      {/* Saudação e data */}
+      <section className="mt-6">
         <h1 className="text-[20px] font-normal">
           Olá, <span className="font-bold">Miguel!</span>
         </h1>
         <p className="text-sm text-gray-300">Sexta, 2 de fevereiro</p>
       </section>
-       <SearchBar />
+      <SearchBar />
+      <Categories />
+      <Banner />
 
-          <Categories />
+      <section className="mt-6">
+        <h2 className=" justify-start text-slate-500 text-xs font-bold  leading-none mb-4"> AGENDAMENTOS</h2>
 
-          <Banner />
+        <div className="flex flex-col gap-4">
+          <BookingItem
+            // name="Vintage Barber"
+          />
 
-
-
+          
+        </div>
+      </section>
     </main>
   );
 }
+
+
+// // src/app/page.tsx
+// import { Header } from "../components/Header";
+// import { SearchBar } from "@/components/SearchBar";
+// import { Categories } from "@/components/Categories";
+// import { Banner } from "@/components/Banner";
+// import { BookingItem } from "@/components/BookingItem";
+// import { SelectionList } from "@/components/SelectionList";
+// import { prisma } from "@/lib/prisma";
+
+// export default async function Home() {
+//   // Buscar barbearias do Prisma
+//   const barbershops = await prisma.barbershop.findMany({
+//     take: 10,
+//   });
+
+//   // Criar ratings fictícios
+//   const popularBarbers = barbershops.slice(0, 5).map((b) => ({
+//     ...b,
+//     rating: Math.random() * 5,
+//   }));
+
+//   const recommendedBarbers = barbershops.slice(5, 10).map((b) => ({
+//     ...b,
+//     rating: Math.random() * 5,
+//   }));
+
+//   return (
+//     <main className="flex flex-col min-h-screen bg-[#141518] text-white px-5 py-6">
+//       <Header />
+
+//       {/* Saudação e data */}
+//       <section className="mt-6">
+//         <h1 className="text-[20px] font-normal">
+//           Olá, <span className="font-bold">Miguel!</span>
+//         </h1>
+//         <p className="text-sm text-gray-300">Sexta, 2 de fevereiro</p>
+//       </section>
+
+//       <SearchBar />
+//       <Categories />
+//       <Banner />
+
+//       {/* Agendamentos */}
+//       <section className="mt-6">
+//         <h2 className="text-slate-500 text-xs font-bold leading-none mb-4">AGENDAMENTOS</h2>
+//         <div className="flex flex-col gap-4">
+//           <BookingItem />
+//         </div>
+//       </section>
+
+//       {/* Recomendados */}
+//       <SelectionList title="Recomendados" items={recommendedBarbers} />
+
+//       {/* Populares */}
+//       <SelectionList title="Populares" items={popularBarbers} />
+//     </main>
+//   );
+// }
